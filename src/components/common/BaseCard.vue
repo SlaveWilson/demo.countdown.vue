@@ -1,5 +1,5 @@
-<template lang="pug">
-.card.flex.justify-center.items-center.rounded
+<template lang="pug" functional>
+.card
   slot
 </template>
 
