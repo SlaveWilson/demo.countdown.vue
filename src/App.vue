@@ -1,5 +1,5 @@
 <template lang="pug">
-h1 2021 Countdown
+h1 2021 New Year Eve
 CountDown
 </template>
 
@@ -15,13 +15,21 @@ export default {
 };
 </script>
 
-<style>
+
+<style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: white;
-  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(0, 0, 0, 0.1);
+
+  height: 100vh;
+  width: 100vw;
+
+  > * + * {
+    margin-top: 2rem;
+  }
 }
 </style>

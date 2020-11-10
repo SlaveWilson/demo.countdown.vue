@@ -1,19 +1,18 @@
 <template lang="pug">
 .container
-  p {{ currentTime }}
   .flex.justify-between
-    .flex.flex-col.items-center
+    .countdown-box
+      BaseCard 1
       p Days
-      BaseCard 01
-    .flex.flex-col.items-center
+    .countdown-box
+      BaseCard 1
       p Hours
-      BaseCard 01
-    .flex.flex-col.items-center
+    .countdown-box
+      BaseCard 1
       p Minuets
-      BaseCard 01
-    .flex.flex-col.items-center
+    .countdown-box
+      BaseCard 1
       p Seconds
-      BaseCard 01
 </template>
 
 <script>
@@ -32,3 +31,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.countdown-box {
+  text-align: center;
+}
+</style>
