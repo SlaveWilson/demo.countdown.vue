@@ -34,10 +34,10 @@ export default {
       return _time;
     }
 
-    const targetDate = "1 Jan 2021";
+    const newYear = "1 Jan 2021";
     function updateCountdown() {
       const currentTime = new Date();
-      const targetTime = new Date(targetDate);
+      const targetTime = new Date(newYear);
       const diff = targetTime - currentTime;
       let remainder = diff / 1000;
 
