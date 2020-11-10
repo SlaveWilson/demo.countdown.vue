@@ -1,6 +1,7 @@
 <template lang="pug">
-h1 2021 New Year Eve
-CountDown
+.overlay
+  h1 2021 New Year Eve
+  CountDown
 </template>
 
 <script>
@@ -18,18 +19,37 @@ export default {
 
 <style lang="scss">
 #app {
+  background-image: url("./assets/images/sunset.jpg");
+  background-size: cover;
+  background-position: center;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  background-color: rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
 
-  height: 100vh;
-  width: 100vw;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: white;
+}
+
+.overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+  min-width: 100%;
 
   > * + * {
     margin-top: 2rem;
   }
+
+  background-color: rgba(0, 0, 0, 0.1);
 }
 </style>

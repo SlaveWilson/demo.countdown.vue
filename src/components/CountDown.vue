@@ -1,22 +1,21 @@
 <template lang="pug" functional>
-.container
-  .flex.justify-between
-    .countdown-box
-      BaseCard {{ daysText }}
-      p Days
-    .countdown-box
-      BaseCard {{ hoursText }}
-      p Hours
-    .countdown-box
-      BaseCard {{ minutesText }}
-      p Minutes
-    .countdown-box
-      BaseCard {{ secondsText }}
-      p Seconds
+.flex.justify-center.countdown-container
+  .countdown-box
+    BaseCard {{ days }}
+    p Days
+  .countdown-box
+    BaseCard {{ formatTime(hours) }}
+    p Hours
+  .countdown-box
+    BaseCard {{ formatTime(minutes) }}
+    p Minutes
+  .countdown-box
+    BaseCard {{ formatTime(seconds) }}
+    p Seconds
 </template>
 
 <script>
-import { ref, computed, onBeforeUnmount } from "vue";
+import { ref, onBeforeUnmount } from "vue";
 
 import BaseCard from "@/components/common/BaseCard";
 export default {
@@ -29,22 +28,11 @@ export default {
     const minutes = ref(0);
     const seconds = ref(0);
 
-    const daysText = computed(() => days.value);
-    const hoursText = computed(() => {
-      const _hours = hours.value;
-      if (_hours < 10) return "0" + _hours;
-      return _hours;
-    });
-    const minutesText = computed(() => {
-      const _minutes = minutes.value;
-      if (_minutes < 10) return "0" + _minutes;
-      return _minutes;
-    });
-    const secondsText = computed(() => {
-      const _seconds = seconds.value;
-      if (_seconds < 10) return "0" + _seconds;
-      return _seconds;
-    });
+    function formatTime(time) {
+      const _time = time;
+      if (_time < 10) return "0" + _time;
+      return _time;
+    }
 
     function updateCountdown() {
       const currentTime = new Date();
@@ -67,12 +55,21 @@ export default {
       clearInterval(updateCountdown);
     });
 
-    return { daysText, hoursText, minutesText, secondsText };
+    return {
+      days,
+      hours,
+      minutes,
+      seconds,
+      formatTime,
+    };
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.countdown-container {
+  flex-wrap: wrap;
+}
 .countdown-box {
   text-align: center;
   font-size: 1.3rem;
