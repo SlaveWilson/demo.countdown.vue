@@ -2,16 +2,16 @@
 .container
   .flex.justify-between
     .countdown-box
-      BaseCard {{ days }}
+      BaseCard {{ daysText }}
       p Days
     .countdown-box
-      BaseCard {{ hours }}
+      BaseCard {{ hoursText }}
       p Hours
     .countdown-box
-      BaseCard {{ minutes }}
+      BaseCard {{ minutesText }}
       p Minutes
     .countdown-box
-      BaseCard {{ seconds }}
+      BaseCard {{ secondsText }}
       p Seconds
 </template>
 
@@ -29,10 +29,32 @@ export default {
       seconds: 0,
     };
   },
+  computed: {
+    daysText() {
+      return this.days;
+    },
+    hoursText() {
+      const hours = this.hours;
+      if (hours < 10) return "0" + hours;
+      return hours;
+    },
+    minutesText() {
+      const minutes = this.minutes;
+      if (minutes < 10) return "0" + minutes;
+      return minutes;
+    },
+    secondsText() {
+      const seconds = this.seconds;
+      if (seconds < 10) return "0" + seconds;
+      return seconds;
+    },
+  },
   created() {
-    setInterval(() => {
-      this.updateCountdown();
-    }, 1000);
+    this.updateCountdown();
+    setInterval(this.updateCountdown, 1000);
+  },
+  beforeUnmount() {
+    clearInterval(this.updateCountdown);
   },
   methods: {
     updateCountdown() {
