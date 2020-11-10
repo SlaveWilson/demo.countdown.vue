@@ -75,5 +75,6 @@ export default {
 <style lang="scss" scoped>
 .countdown-box {
   text-align: center;
+  font-size: 1.5rem;
 }
 </style>

@@ -6,6 +6,7 @@
 <style lang="scss" scoped>
 .card {
   font-size: 6rem;
+  font-weight: bold;
   line-height: 1;
   margin: 0 2rem;
 }
