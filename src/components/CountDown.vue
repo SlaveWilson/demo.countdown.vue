@@ -34,11 +34,12 @@ export default {
       return _time;
     }
 
+    const targetDate = "1 Jan 2021";
     function updateCountdown() {
       const currentTime = new Date();
-      const targetTime = new Date(2021, 0, 0, 0, 0, 0, 0);
+      const targetTime = new Date(targetDate);
       const diff = targetTime - currentTime;
-      let remainder = Math.round(diff / 1000);
+      let remainder = diff / 1000;
 
       days.value = Math.floor(remainder / 60 / 60 / 24);
       remainder %= 60 * 60 * 24;
