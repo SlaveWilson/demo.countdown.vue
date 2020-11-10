@@ -1,5 +1,5 @@
 <template lang="pug">
-.overlay
+.overlay.space-y-8 
   h1 2021 New Year Eve
   CountDown
 </template>
@@ -45,10 +45,6 @@ export default {
 
   min-height: 100vh;
   min-width: 100%;
-
-  > * + * {
-    margin-top: 2rem;
-  }
 
   background-color: rgba(0, 0, 0, 0.1);
 }
