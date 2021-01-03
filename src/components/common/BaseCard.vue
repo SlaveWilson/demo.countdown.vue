@@ -9,5 +9,10 @@
   font-weight: bold;
   line-height: 1;
   margin: 0 2rem;
+
+  @include sm {
+    font-size: 4.5rem;
+    margin: 0 1rem;
+  }
 }
 </style>

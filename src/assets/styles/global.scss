@@ -1,6 +1,10 @@
 h1 {
   font-size: 4rem;
-  margin-top: -10rem;
+  margin-top: -8px;
 
   text-align: center;
+
+  @include tablet {
+    margin-top: -10rem;
+  }
 }

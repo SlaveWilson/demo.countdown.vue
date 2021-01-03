@@ -51,5 +51,9 @@ export default {
 .countdown-box {
   text-align: center;
   font-size: 1.3rem;
+  width: 50%;
+  @include desktop {
+    width: unset;
+  }
 }
 </style>
