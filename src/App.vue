@@ -16,6 +16,7 @@ export default {
   },
   setup() {
     const { year } = useDate();
+    document.title = `${year.value} Countdown Timer`;
     return { year };
   },
 };
