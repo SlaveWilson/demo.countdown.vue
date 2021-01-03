@@ -1,5 +1,7 @@
 # demo.countdown.vue
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/06809867-be33-43e8-96ef-391f5017a9d4/deploy-status)](https://app.netlify.com/sites/slavewilson-countdown/deploys)
+
 ## Project setup
 ```
 npm install
