@@ -1,11 +1,12 @@
 <template lang="pug">
 .overlay.space-y-8 
-  h1 2021 New Year Eve
+  h1 {{year}} New Year Eve
   CountDown
 </template>
 
 <script>
 import { defineAsyncComponent } from "vue";
+import useDate from "@/hooks/date";
 const CountDown = defineAsyncComponent(() => import("./components/CountDown"));
 
 export default {
@@ -13,9 +14,12 @@ export default {
   components: {
     CountDown,
   },
+  setup() {
+    const { year } = useDate();
+    return { year };
+  },
 };
 </script>
-
 
 <style lang="scss">
 #app {
